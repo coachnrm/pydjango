@@ -26,6 +26,10 @@ urlpatterns = [
     re_path(r'^title/(?P<title>[-\w\s]+)/$', views.show_title, name='show_title'),
     path('map/', views.maps),
     path('filter/custom/', views.filter_custom),
+    path('redirect/from/', views.redirect_from, name='redirect_from'),
+    path('redirect/to/', views.redirect_to, name='redirect_to'),
+    path('redirect/error/<int:code>/<str:text>/',
+         views.redirect_error, name='redirect_error'),
 ]
 
 

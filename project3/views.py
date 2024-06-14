@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from datetime import datetime
 
 def index(request):
@@ -27,3 +27,16 @@ def maps(request):
 def filter_custom(request):
     now = datetime.today()
     return render(request, 'filter-custom.html', {'now':now})
+
+def redirect_from(request):
+    if random.randit(1, 10) < 5:
+        return redirect(redirect_to)
+    else:
+        return redirect(redirect_error, code=123, text='Fetal Error')
+
+def redirect_to(request):
+    return render(request, 'redirect-to.html')
+
+def redirect_error(request, code, text):
+    return render(request, 'redirect-error.html',
+                  {'code':code, 'text':text})
