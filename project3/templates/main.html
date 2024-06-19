@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Document{% endblock %}</title>
+    <base href="http://127.0.0.1/">
+
+    <link rel="stylesheet"
+        href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    {% block style %} {% endblock %}
+
+    <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    {% block script %} {% endblock %}
+
+</head>
+<body>
+<h2>Django Framework</h2>
+<nav style="background-color: powderblue; padding: 5px;">
+    <a href="home/">First Page</a>
+    <a href="products/">Good title</a>
+</nav>
+<div class="container" style="margin: 10px">
+{% block content %}
+{% endblock %}
+</div>
+<footer style="margin: 30px 20px; text-align:center">
+    &copy; {% now 'Y' %} developerthai.com - All rights reserved
+</footer>
+</body>
+</html>

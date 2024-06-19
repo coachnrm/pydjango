@@ -30,6 +30,10 @@ urlpatterns = [
     path('redirect/to/', views.redirect_to, name='redirect_to'),
     path('redirect/error/<int:code>/<str:text>/',
          views.redirect_error, name='redirect_error'),
+    path('main/', views.main),
+    path('home/', views.home),
+    path('products/', views.products),
+    path('bootstrap/', views.bootstrap)
 ]
 
 

@@ -40,3 +40,16 @@ def redirect_to(request):
 def redirect_error(request, code, text):
     return render(request, 'redirect-error.html',
                   {'code':code, 'text':text})
+
+def main(request):
+    return render(request, 'main.html')
+
+def home(request):
+    return render(request, 'home.html')
+
+def products(request):
+    data = { 'products':['Smartphone', 'Tablet', 'Notebook']}
+    return render(request, 'products.html', data)
+
+def bootstrap(request):
+    return render(request, 'bootstrap.html')
